@@ -18,9 +18,16 @@ class Entry: Codable {
     }
 }
 
+// MARK: - Extentions
+
 extension Entry: Equatable {
     static func == (lhs: Entry, rhs: Entry) -> Bool {
-        return lhs.title == rhs.title && lhs.body == rhs.body && lhs.timestamp == rhs.timestamp
+        
+        //using the timestamp, because there is no way that user can create the entry at the same time.
+        return lhs.timestamp == rhs.timestamp
+        
+        // This way works, but not logically
+        //return lhs.title == rhs.title && lhs.body == rhs.body && lhs.timestamp == rhs.timestamp
     }
 }
 

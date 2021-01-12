@@ -8,12 +8,16 @@
 import Foundation
 
 class EntryController {
+    
+    // MARK: - Properties
+    
     // Create a shared property
     static var shared = EntryController()
     
     // Add an entries array property, and set its value to an empty array of Entry.
     var entries: [Entry] = []
     
+    // MARK: - Methods
 
     // Create a createEntryWith(title: ...) function that takes in a title, and body. It should create a new instance of Entry and add it to the entries array
     func createEntryWith(title: String, body: String) {
@@ -33,9 +37,9 @@ class EntryController {
     }
     
     
+    // MARK: - Persistence Data
     
-    //Mark: - Persistence Data
-    private func fileURL() -> URL {
+    func fileURL() -> URL {
         let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         let documentsDirectoryURL = urls[0].appendingPathComponent("Journal.json")
         return documentsDirectoryURL

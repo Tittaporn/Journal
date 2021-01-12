@@ -9,13 +9,14 @@ import UIKit
 
 class EntryDetailViewController: UIViewController, UITextFieldDelegate {
     
-    @IBOutlet weak var titleTextField: UITextField!
+    // MARK: - Outlets
     
+    @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var bodyTextView: UITextView!
     
     //Mark: - Properties
-    var entry: Entry?
     
+    var entry: Entry?
     
     //Mark: - Life Cycle Methods
     
@@ -27,44 +28,22 @@ class EntryDetailViewController: UIViewController, UITextFieldDelegate {
     }
     
     //Mark: - Actions
-    
     @IBAction func clearTextButtonTapped(_ sender: UIButton) {
-        
         titleTextField.text = ""
         bodyTextView.text = ""
-        
-        
     }
     
     @IBAction func saveBarButtonItemTapped(_ sender: Any) {
-      /*
-        
-        //check if the optional entry property holds an entry.
-        if entry != nil {
-            // If it does, add a print statement that says “to be implemented tomorrow”.
-            print("to be implemented tomorrow")
-
-        } else {
-
-           // If not (meaning if the entry property is nil, call the createEntryWith()
-            guard let title = titleTextField.text,
-                  let body =  bodyTextView.text else {return}
-            
-            EntryController.shared.createEntryWith(title: title, body: body)
-       }
-        */
-        
         
         guard let title = titleTextField.text, !title.isEmpty,
-              
               let body =  bodyTextView.text, !body.isEmpty else {return}
         EntryController.shared.createEntryWith(title: title, body: body)
         
-        
         //add code to dismiss the current view and pop back to the EntryListTableViewController.
-      
         navigationController?.popViewController(animated: true)
         dismiss(animated: true, completion: nil)
+        
+        self.navigationController?.popViewController(animated: true)
     }
     
     
@@ -79,8 +58,6 @@ class EntryDetailViewController: UIViewController, UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         titleTextField.resignFirstResponder()
     }
- 
-    
 }
 
 /*

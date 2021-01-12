@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		366E5C0F25AE0FC30031DAC9 /* DateExtenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366E5C0E25AE0FC30031DAC9 /* DateExtenstion.swift */; };
 		369F7D2F25ACE5EB00329824 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369F7D2E25ACE5EB00329824 /* Entry.swift */; };
 		369F7D3425ACE7CD00329824 /* EntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369F7D3325ACE7CD00329824 /* EntryController.swift */; };
 		369F7D3925ACEB7400329824 /* EntryListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369F7D3825ACEB7400329824 /* EntryListTableViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		366E5C0E25AE0FC30031DAC9 /* DateExtenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtenstion.swift; sourceTree = "<group>"; };
 		369F7D2E25ACE5EB00329824 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 		369F7D3325ACE7CD00329824 /* EntryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryController.swift; sourceTree = "<group>"; };
 		369F7D3825ACEB7400329824 /* EntryListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryListTableViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +49,7 @@
 			isa = PBXGroup;
 			children = (
 				369F7D2E25ACE5EB00329824 /* Entry.swift */,
+				366E5C0E25AE0FC30031DAC9 /* DateExtenstion.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -186,6 +189,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				366E5C0F25AE0FC30031DAC9 /* DateExtenstion.swift in Sources */,
 				369F7D2F25ACE5EB00329824 /* Entry.swift in Sources */,
 				369F7D3925ACEB7400329824 /* EntryListTableViewController.swift in Sources */,
 				7EDA120F259D233600BBD350 /* AppDelegate.swift in Sources */,
