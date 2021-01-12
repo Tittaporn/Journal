@@ -34,6 +34,11 @@ class EntryListTableViewController: UITableViewController {
         // Configure the cell...
         cell.textLabel?.text = entry.title
         
+        //format the date
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMM d, yyyy"
+        cell.detailTextLabel?.text = formatter.string(from: EntryController.shared.entries[indexPath.row].timestamp)
+        
         return cell
     }
     

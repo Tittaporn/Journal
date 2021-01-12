@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="entryCell" textLabel="9N2-kr-NRp" style="IBUITableViewCellStyleDefault" id="YZA-cg-mWD">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="entryCell" textLabel="9N2-kr-NRp" detailTextLabel="hHf-xf-2gS" style="IBUITableViewCellStyleValue1" id="YZA-cg-mWD">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YZA-cg-mWD" id="K1i-gE-8r3">
@@ -25,7 +25,14 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9N2-kr-NRp">
-                                            <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
+                                            <rect key="frame" x="20" y="12" width="33" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hHf-xf-2gS">
+                                            <rect key="frame" x="335.5" y="12" width="58.5" height="20.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -77,9 +84,9 @@
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2FA-d2-Cn0">
                                 <rect key="frame" x="16" y="816" width="382" height="30"/>
-                                <state key="normal" title="Add Entry"/>
+                                <state key="normal" title="Clear Text"/>
                                 <connections>
-                                    <action selector="saveButtonTapped:" destination="eyx-3c-8H8" eventType="touchUpInside" id="MHn-6Y-8vt"/>
+                                    <action selector="clearTextButtonTapped:" destination="eyx-3c-8H8" eventType="touchUpInside" id="MHn-6Y-8vt"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -98,7 +105,13 @@
                             <constraint firstItem="zb0-q1-THt" firstAttribute="trailing" secondItem="mkI-jx-hzI" secondAttribute="trailing" constant="16" id="vX5-I2-UWL"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="XD3-fB-U4l"/>
+                    <navigationItem key="navigationItem" id="XD3-fB-U4l">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="QU3-Ku-jBc">
+                            <connections>
+                                <action selector="saveBarButtonItemTapped:" destination="eyx-3c-8H8" id="Ha2-yo-qPg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="bodyTextView" destination="mkI-jx-hzI" id="AQ6-ij-7Kc"/>
                         <outlet property="titleTextField" destination="M1a-aq-cBs" id="U3g-UI-tea"/>

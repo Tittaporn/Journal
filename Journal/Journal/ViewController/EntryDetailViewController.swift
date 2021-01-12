@@ -22,37 +22,51 @@ class EntryDetailViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateView()
-        self.titleTextField.delegate = self
+        titleTextField.delegate = self
         // Do any additional setup after loading the view.
     }
     
     //Mark: - Actions
     
-    @IBAction func saveButtonTapped(_ sender: UIButton) {
+    @IBAction func clearTextButtonTapped(_ sender: UIButton) {
+        
+        titleTextField.text = ""
+        bodyTextView.text = ""
+        
+        
+    }
+    
+    @IBAction func saveBarButtonItemTapped(_ sender: Any) {
+      /*
         
         //check if the optional entry property holds an entry.
         if entry != nil {
             // If it does, add a print statement that says “to be implemented tomorrow”.
             print("to be implemented tomorrow")
-            
+
         } else {
-            
-            //If not (meaning if the entry property is nil, call the createEntryWith()
+
+           // If not (meaning if the entry property is nil, call the createEntryWith()
             guard let title = titleTextField.text,
                   let body =  bodyTextView.text else {return}
             
             EntryController.shared.createEntryWith(title: title, body: body)
-            
-        }
+       }
+        */
+        
+        
+        guard let title = titleTextField.text, !title.isEmpty,
+              
+              let body =  bodyTextView.text, !body.isEmpty else {return}
+        EntryController.shared.createEntryWith(title: title, body: body)
+        
         
         //add code to dismiss the current view and pop back to the EntryListTableViewController.
       
         navigationController?.popViewController(animated: true)
         dismiss(animated: true, completion: nil)
-        
-        
-        
     }
+    
     
     //Mark: - Helper Fuctions
     
