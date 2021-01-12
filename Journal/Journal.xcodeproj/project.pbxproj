@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		369F7D2F25ACE5EB00329824 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369F7D2E25ACE5EB00329824 /* Entry.swift */; };
+		369F7D3425ACE7CD00329824 /* EntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369F7D3325ACE7CD00329824 /* EntryController.swift */; };
+		369F7D3925ACEB7400329824 /* EntryListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369F7D3825ACEB7400329824 /* EntryListTableViewController.swift */; };
+		369F7D3C25ACEE4100329824 /* EntryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369F7D3B25ACEE4100329824 /* EntryDetailViewController.swift */; };
 		7EDA120F259D233600BBD350 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDA120E259D233600BBD350 /* AppDelegate.swift */; };
 		7EDA1211259D233600BBD350 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDA1210259D233600BBD350 /* SceneDelegate.swift */; };
 		7EDA1216259D233600BBD350 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EDA1214259D233600BBD350 /* Main.storyboard */; };
@@ -15,6 +19,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		369F7D2E25ACE5EB00329824 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
+		369F7D3325ACE7CD00329824 /* EntryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryController.swift; sourceTree = "<group>"; };
+		369F7D3825ACEB7400329824 /* EntryListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryListTableViewController.swift; sourceTree = "<group>"; };
+		369F7D3B25ACEE4100329824 /* EntryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDetailViewController.swift; sourceTree = "<group>"; };
 		7EDA120B259D233600BBD350 /* Journal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Journal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EDA120E259D233600BBD350 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7EDA1210259D233600BBD350 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -35,6 +43,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		369F7D2D25ACE5B600329824 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				369F7D2E25ACE5EB00329824 /* Entry.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		369F7D3225ACE78800329824 /* ModelController */ = {
+			isa = PBXGroup;
+			children = (
+				369F7D3325ACE7CD00329824 /* EntryController.swift */,
+			);
+			path = ModelController;
+			sourceTree = "<group>";
+		};
+		369F7D3625ACEB3000329824 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				369F7D3825ACEB7400329824 /* EntryListTableViewController.swift */,
+				369F7D3B25ACEE4100329824 /* EntryDetailViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		7EDA1202259D233600BBD350 = {
 			isa = PBXGroup;
 			children = (
@@ -54,6 +87,9 @@
 		7EDA120D259D233600BBD350 /* Journal */ = {
 			isa = PBXGroup;
 			children = (
+				369F7D3625ACEB3000329824 /* ViewController */,
+				369F7D3225ACE78800329824 /* ModelController */,
+				369F7D2D25ACE5B600329824 /* Model */,
 				7EDA1223259D234200BBD350 /* Resources */,
 				7EDA1227259D237600BBD350 /* Storyboards */,
 			);
@@ -150,7 +186,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				369F7D2F25ACE5EB00329824 /* Entry.swift in Sources */,
+				369F7D3925ACEB7400329824 /* EntryListTableViewController.swift in Sources */,
 				7EDA120F259D233600BBD350 /* AppDelegate.swift in Sources */,
+				369F7D3425ACE7CD00329824 /* EntryController.swift in Sources */,
+				369F7D3C25ACEE4100329824 /* EntryDetailViewController.swift in Sources */,
 				7EDA1211259D233600BBD350 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
