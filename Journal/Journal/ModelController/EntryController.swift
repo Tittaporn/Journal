@@ -7,18 +7,36 @@
 
 import Foundation
 
+
 class EntryController {
     
-    // MARK: - Properties
+   
     
-    // Create a shared property
-    static var shared = EntryController()
+    // MARK: - CRUD Methods
+    static func createEntryWith(title: String, body: String, journal: Journal) {
+        let entry = Entry(title: title, body: body)
+        JournalController.shared.addEntryTo(journal: journal, entry: entry)
+        print("Created New Entry")
+    }
     
-    // Add an entries array property, and set its value to an empty array of Entry.
-    var entries: [Entry] = []
+    static func updateEntry(entry: Entry, title: String, body: String) {
+        
+        entry.title = title
+        entry.body = body
+        
+        
+        JournalController.shared.saveToPersistenceStore()
+    }
     
-    // MARK: - Methods
+    static func deleteEntry(entryToDelete: Entry, journal: Journal) {
+        JournalController.shared.removeEntryFrom(journal: journal, entry: entryToDelete)
+    }
+    
 
+
+}
+
+/*
     // Create a createEntryWith(title: ...) function that takes in a title, and body. It should create a new instance of Entry and add it to the entries array
     func createEntryWith(title: String, body: String) {
         let entry = Entry(title: title, body: body)
@@ -32,39 +50,11 @@ class EntryController {
     // Create a delete(entry: Entry) function that removes the entry from the entries array
     func deleteEntry(entryToDelete: Entry) {
         guard let index = entries.firstIndex(of: entryToDelete) else { return }
+       
         entries.remove(at: index)
         saveToPersistenceStore()
     }
     
-    
-    // MARK: - Persistence Data
-    
-    func fileURL() -> URL {
-        let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        let documentsDirectoryURL = urls[0].appendingPathComponent("Journal.json")
-        return documentsDirectoryURL
-    }
-    
-    // Saving Data
-    func saveToPersistenceStore() {
-        do {
-            let data = try JSONEncoder().encode(entries)
-            try data.write(to: fileURL())
-        } catch {
-            print(error)
-            print(error.localizedDescription)
-        }
-    }
-    
-    // Loading Data
-    func loadFromPersistentStorage() {
-        do {
-            let data = try Data(contentsOf: fileURL())
-            entries = try JSONDecoder().decode([Entry].self, from: data)
-        } catch {
-            print(error)
-            print(error.localizedDescription)
-        }
-    }
-    
+
 }
+ */

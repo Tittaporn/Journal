@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		366E5C0F25AE0FC30031DAC9 /* DateExtenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366E5C0E25AE0FC30031DAC9 /* DateExtenstion.swift */; };
+		365F2FF025AE663400207865 /* Journal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365F2FEF25AE663400207865 /* Journal.swift */; };
+		365F2FF325AE671E00207865 /* JournalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365F2FF225AE671E00207865 /* JournalController.swift */; };
+		365F2FF625AE7B4A00207865 /* JournalListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365F2FF525AE7B4A00207865 /* JournalListViewController.swift */; };
 		369F7D2F25ACE5EB00329824 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369F7D2E25ACE5EB00329824 /* Entry.swift */; };
 		369F7D3425ACE7CD00329824 /* EntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369F7D3325ACE7CD00329824 /* EntryController.swift */; };
 		369F7D3925ACEB7400329824 /* EntryListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369F7D3825ACEB7400329824 /* EntryListTableViewController.swift */; };
@@ -20,7 +22,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		366E5C0E25AE0FC30031DAC9 /* DateExtenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtenstion.swift; sourceTree = "<group>"; };
+		365F2FEF25AE663400207865 /* Journal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Journal.swift; sourceTree = "<group>"; };
+		365F2FF225AE671E00207865 /* JournalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalController.swift; sourceTree = "<group>"; };
+		365F2FF525AE7B4A00207865 /* JournalListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalListViewController.swift; sourceTree = "<group>"; };
 		369F7D2E25ACE5EB00329824 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 		369F7D3325ACE7CD00329824 /* EntryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryController.swift; sourceTree = "<group>"; };
 		369F7D3825ACEB7400329824 /* EntryListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryListTableViewController.swift; sourceTree = "<group>"; };
@@ -49,7 +53,7 @@
 			isa = PBXGroup;
 			children = (
 				369F7D2E25ACE5EB00329824 /* Entry.swift */,
-				366E5C0E25AE0FC30031DAC9 /* DateExtenstion.swift */,
+				365F2FEF25AE663400207865 /* Journal.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -58,6 +62,7 @@
 			isa = PBXGroup;
 			children = (
 				369F7D3325ACE7CD00329824 /* EntryController.swift */,
+				365F2FF225AE671E00207865 /* JournalController.swift */,
 			);
 			path = ModelController;
 			sourceTree = "<group>";
@@ -65,8 +70,9 @@
 		369F7D3625ACEB3000329824 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				369F7D3825ACEB7400329824 /* EntryListTableViewController.swift */,
 				369F7D3B25ACEE4100329824 /* EntryDetailViewController.swift */,
+				369F7D3825ACEB7400329824 /* EntryListTableViewController.swift */,
+				365F2FF525AE7B4A00207865 /* JournalListViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -189,10 +195,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				366E5C0F25AE0FC30031DAC9 /* DateExtenstion.swift in Sources */,
+				365F2FF325AE671E00207865 /* JournalController.swift in Sources */,
 				369F7D2F25ACE5EB00329824 /* Entry.swift in Sources */,
 				369F7D3925ACEB7400329824 /* EntryListTableViewController.swift in Sources */,
+				365F2FF025AE663400207865 /* Journal.swift in Sources */,
 				7EDA120F259D233600BBD350 /* AppDelegate.swift in Sources */,
+				365F2FF625AE7B4A00207865 /* JournalListViewController.swift in Sources */,
 				369F7D3425ACE7CD00329824 /* EntryController.swift in Sources */,
 				369F7D3C25ACEE4100329824 /* EntryDetailViewController.swift in Sources */,
 				7EDA1211259D233600BBD350 /* SceneDelegate.swift in Sources */,
