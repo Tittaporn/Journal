@@ -10,40 +10,44 @@ import UIKit
 class EntryDetailViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: - Outlets
-    
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var bodyTextView: UITextView!
     
-    //Mark: - Properties
-    
+   // MARK: - Properties
+    var journal: Journal?
     var entry: Entry?
     
-    //Mark: - Life Cycle Methods
-    
+    // MARK: - Life Cycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateView()
         titleTextField.delegate = self
-        // Do any additional setup after loading the view.
+        updateView()
+        print("\n\n  viewDidLoad() ::: journal  ::: \(journal?.title)")
+        print("\n\n  viewDidLoad() ::: entry  ::: \(entry?.title)")
     }
     
-    //Mark: - Actions
+  // MARK: - Actions
     @IBAction func clearTextButtonTapped(_ sender: UIButton) {
         titleTextField.text = ""
         bodyTextView.text = ""
     }
     
     @IBAction func saveBarButtonItemTapped(_ sender: Any) {
-        
+        print("saveBarButtonItemTapped")
         guard let title = titleTextField.text, !title.isEmpty,
-              let body =  bodyTextView.text, !body.isEmpty else {return}
-        EntryController.shared.createEntryWith(title: title, body: body)
+              let body =  bodyTextView.text, !body.isEmpty,
+              let journal = journal else {return}
+
+        if let entry = entry {
+            EntryController.update(entry: entry, title: title, body: body)
+            print("\n\n  update on SaveBarButtonItems  ::: journal.entries.count  \(journal.entries.count) ::: journal.title \(journal.title)")
+        } else {
+            EntryController.createEntryWith(title: title, body: body, journal: journal)
+            print("\n\n  createEntryWith on SaveBarButtonItems  ::: journal.entries.count  \(journal.entries.count) ::: journal.title \(journal.title)")
+        }
+      
         
-        //add code to dismiss the current view and pop back to the EntryListTableViewController.
-        navigationController?.popViewController(animated: true)
-        dismiss(animated: true, completion: nil)
-        
-        self.navigationController?.popViewController(animated: true)
+       navigationController?.popViewController(animated: true)
     }
     
     
@@ -60,14 +64,3 @@ class EntryDetailViewController: UIViewController, UITextFieldDelegate {
     }
 }
 
-/*
- Wrap-Up Detail View
- Hop back to your EntryDetailViewController and finish out the remaining steps.
- 
- 1) Add a UIBarButtonItem to the UINavigationBar as a Save System Item and add an IBAction to the class file called saveButtonTapped.
- 2) In the saveButtonTapped IBAction, using an if let (conditional unwrapping) check if the optional entry property holds an entry. If it does, add a print statement that says “to be implemented tomorrow”. If not (meaning if the entry property is nil, call the createEntryWith() function on the EntryController. This will require you to use your outlets to access the users title and body inputs.
- 3) Still inside the saveButtonTapped IBAction, but outside of the if let, add code to dismiss the current view and pop back to the EntryListTableViewController.
- 4) Add an updateViews() function that checks if the optional entry property holds an entry (hint: use a guard statement to do this). If it does, implement the function to update all view elements that reflect details about the model object entry (in this case, the titleTextField and bodyTextView)
- 5) Update the viewDidLoad() function to call updateViews()
- 
- */

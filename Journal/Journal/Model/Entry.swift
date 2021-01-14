@@ -7,9 +7,9 @@
 
 import Foundation
 class Entry: Codable {
-    let title: String
-    let body: String
-    let timestamp: Date 
+    var title: String
+    var body: String
+    let timestamp: Date
     
     init(title: String, body: String, timestamp: Date = Date()) {
         self.title = title
@@ -24,10 +24,10 @@ extension Entry: Equatable {
     static func == (lhs: Entry, rhs: Entry) -> Bool {
         
         //using the timestamp, because there is no way that user can create the entry at the same time.
-        return lhs.timestamp == rhs.timestamp
+       // return lhs.timestamp == rhs.timestamp
         
         // This way works, but not logically
-        //return lhs.title == rhs.title && lhs.body == rhs.body && lhs.timestamp == rhs.timestamp
+        return lhs.title == rhs.title && lhs.body == rhs.body && lhs.timestamp == rhs.timestamp
     }
 }
 
